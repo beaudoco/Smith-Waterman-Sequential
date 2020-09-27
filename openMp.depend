@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1601077960 source:c:\users\bring\onedrive\documents\cis-677\test-2\openmp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<stdbool.h>
+	<string.h>
+
