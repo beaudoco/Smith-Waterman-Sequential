@@ -6,3 +6,11 @@
 	<stdbool.h>
 	<string.h>
 
+1601430145 source:c:\users\bring\onedrive\documents\cis-677\pa-2\smith-waterman-sequential\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<stdbool.h>
+	<string.h>
+	<time.h>
+

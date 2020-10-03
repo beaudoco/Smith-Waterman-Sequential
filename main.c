@@ -12,6 +12,7 @@ articles language.
 #include <ctype.h>
 #include <stdbool.h>
 #include <string.h>
+#include <time.h>
 
 /*********************************************************
 This section is used to declare the methods that shall be
@@ -165,6 +166,10 @@ void checkMatches(char *mainBuff, int mainArrLen, char *compareBuff, int compare
     int **matchArr = {0};
     int i = 0, j = 0;
 
+
+    struct timespec begin, end;
+    clock_gettime(CLOCK_REALTIME, &begin);
+
     //ALLOCATE MEMORY FOR COUNT
     matchArr = realloc(matchArr, sizeof(int*) * mainArrLen * 2);
 
@@ -217,6 +222,13 @@ void checkMatches(char *mainBuff, int mainArrLen, char *compareBuff, int compare
         }
     }
 
+    clock_gettime(CLOCK_REALTIME, &end);
+
+    long seconds = end.tv_sec - begin.tv_sec;
+    long nanoseconds = end.tv_nsec - begin.tv_nsec;
+    double elapsed = seconds + nanoseconds*1e-9;
+
+    printf("time taken %f\n",elapsed);
 
     createCSV(matchArr, mainArrLen, compareArrLen);
 
